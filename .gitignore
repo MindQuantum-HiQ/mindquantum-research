@@ -1,1 +1,123 @@
+# ===== 操作系统 =====
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+wheels/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+.hypothesis/
+Pipfile.lock
+
+# ===== 虚拟环境 =====
+.venv/
+venv/
+env/
+ENV/
+.conda/
+conda-meta/
+
+# ===== Jupyter =====
+.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+
+# ===== 实验跟踪 / 训练产物 =====
+wandb/
+mlruns/
+lightning_logs/
+runs/
+events.out.tfevents.*
+rank_0/
+somas_meta/
+kernel_meta/
+*.ckpt.lock
+
+# ===== 编译产物 =====
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+a.out
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+
+# ===== LaTeX 中间文件 =====
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+
+# ===== 前端 =====
+node_modules/
+
+# ===== 日志与临时文件 =====
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+tmp/
+temp/
+.cache/
+
+# ===== 编辑器 / IDE =====
+.idea/
+.vscode/
+*.iml
+.spyderproject
+.spyproject
+.ropeproject
+
+# ===== 敏感信息（禁止提交） =====
+.env
+.env.*
+*.pem
+*.key
+*.p12
+credentials*.json
+
+# ===== 压缩包与超大二进制（请改用外部链接分发） =====
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.iso
+*.dmg
+
+# 如确有必要提交个别被忽略的文件，可与维护者确认后使用 `git add -f <file>`
