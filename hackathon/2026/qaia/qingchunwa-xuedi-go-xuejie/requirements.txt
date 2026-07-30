@@ -1,0 +1,4 @@
+mindquantum
+  numpy
+  scipy
+  torch
