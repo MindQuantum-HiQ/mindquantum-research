@@ -59,26 +59,26 @@ def read_graph_file(filename, negate=True):
     """
     baseline = 0.0
     time_baseline = 0.0
-    
+
     with open(filename, 'r') as f:
         header = f.readline().strip().split()
         num_nodes = int(header[0])
 
         if len(header) >= 3:
             baseline = float(header[2])
-            
+
         if len(header) >= 4:
             time_baseline = float(header[3])
 
         rows = []
         cols = []
         data = []
-        
+
         for line in f:
             parts = line.strip().split()
-            if len(parts) < 2: 
+            if len(parts) < 2:
                 continue
-            u = int(parts[0]) - 1 
+            u = int(parts[0]) - 1
             v = int(parts[1]) - 1
 
             w = float(parts[2]) if len(parts) > 2 else 1.0
@@ -89,14 +89,14 @@ def read_graph_file(filename, negate=True):
             rows.append(u)
             cols.append(v)
             data.append(w)
-            
+
             rows.append(v)
             cols.append(u)
             data.append(w)
 
-    adj_matrix = sparse.coo_matrix((data, (rows, cols)), 
+    adj_matrix = sparse.coo_matrix((data, (rows, cols)),
                                    shape=(num_nodes, num_nodes))
-    
+
     return adj_matrix.tocsr(), baseline, time_baseline
 
 
@@ -104,7 +104,7 @@ def read_graph_file(filename, negate=True):
 该函数禁止改动!!!
 '''
 def scipy_to_torch_sparse(G_csr, device='cpu'):
-    """ 
+    """
     Converts a Scipy sparse matrix (CSR) to a PyTorch sparse tensor (COO).
     """
     G_coo = G_csr.tocoo()
@@ -122,7 +122,7 @@ def scipy_to_torch_sparse(G_csr, device='cpu'):
 def update_sparse_matrix_weights(G_csr, classification):
     """
     Updates the graph weights based on the current partition (classification).
-    
+
     Mechanism:
     Inverts the sign of edges that connect nodes in different partitions (Cross-Edges).
     This encourages the solver to explore different cuts in subsequent iterations.
@@ -159,17 +159,17 @@ def get_smaller_subset(classification):
 def calculate_cut_value(G_torch, partition_np, device='cpu'):
     """
     Calculating cut value.
-    
+
     Args:
         G_torch: The original PyTorch sparse tensor
         partition_np: Classification results of nodes (numpy array, {-1, 1})
     """
     partition_torch = torch.FloatTensor(partition_np).to(device).unsqueeze(1)
-    
+
     # Energy Calculation:
     # Ising Hamiltonian H = -0.5 * s^T * J * s
     energy = -0.5 * torch.sum(G_torch @ partition_torch * partition_torch)
-    
+
     # Cut Value Formula:
     # Cut = 0.25 * Sum(W) - 0.25 * s^T * W * s
     # Cut = -0.25 * Sum(G_torch) - 0.5 * Energy

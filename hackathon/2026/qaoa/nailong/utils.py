@@ -198,8 +198,8 @@ def scale_gamma(
 
     norm = ising_rms_scale(J, h, eps=eps)
     factor = float(1.0 / max(norm, eps))
-    return float(gamma) * deg_term * factor 
- 
+    return float(gamma) * deg_term * factor
+
 
 def warm_theta_from_bits(bits01: np.ndarray, warm_c: float) -> np.ndarray:
     c = float(np.clip(warm_c, 0.0, 1.0))
