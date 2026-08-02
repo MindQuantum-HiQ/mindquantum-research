@@ -1,0 +1,70 @@
+{
+  "dataset": "public10",
+  "method": "full enumeration of all 2^20 spin configurations per case",
+  "hv_ref": 1.01,
+  "chunk_size": 65536,
+  "elapsed_s": 3356.877599954605,
+  "mean_exact_hv": 0.598481003864382,
+  "rows": [
+    {
+      "case": "k5_grid4x5_00.npz",
+      "exact_hv": 0.5925657521207284,
+      "nd_count": 5053,
+      "elapsed_s": 361.0304489135742
+    },
+    {
+      "case": "k5_grid4x5_01.npz",
+      "exact_hv": 0.4863553889761853,
+      "nd_count": 5256,
+      "elapsed_s": 345.767591714859
+    },
+    {
+      "case": "k5_grid4x5_02.npz",
+      "exact_hv": 0.6369842749117529,
+      "nd_count": 2516,
+      "elapsed_s": 275.05430698394775
+    },
+    {
+      "case": "k5_grid4x5_03.npz",
+      "exact_hv": 0.6420242231475564,
+      "nd_count": 1070,
+      "elapsed_s": 339.6680989265442
+    },
+    {
+      "case": "k5_grid4x5_04.npz",
+      "exact_hv": 0.5592283753242957,
+      "nd_count": 5623,
+      "elapsed_s": 354.44915318489075
+    },
+    {
+      "case": "k5_grid4x5_05.npz",
+      "exact_hv": 0.6396727039852278,
+      "nd_count": 2536,
+      "elapsed_s": 348.23398995399475
+    },
+    {
+      "case": "k5_grid4x5_06.npz",
+      "exact_hv": 0.5774658784829463,
+      "nd_count": 4950,
+      "elapsed_s": 313.33274006843567
+    },
+    {
+      "case": "k5_grid4x5_07.npz",
+      "exact_hv": 0.6876088926061941,
+      "nd_count": 1553,
+      "elapsed_s": 383.9064898490906
+    },
+    {
+      "case": "k5_grid4x5_08.npz",
+      "exact_hv": 0.6319218606778896,
+      "nd_count": 2557,
+      "elapsed_s": 332.36569905281067
+    },
+    {
+      "case": "k5_grid4x5_09.npz",
+      "exact_hv": 0.5309826884110438,
+      "nd_count": 6779,
+      "elapsed_s": 302.97191405296326
+    }
+  ]
+}
