@@ -1,0 +1,5 @@
+mindquantum
+numba
+numpy
+scipy
+torch
