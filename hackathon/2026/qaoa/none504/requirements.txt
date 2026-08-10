@@ -1,0 +1,3 @@
+mindquantum==0.12.0
+numpy==2.4.3
+pygmo==2.19.8
