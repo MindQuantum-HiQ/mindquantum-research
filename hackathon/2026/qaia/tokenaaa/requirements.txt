@@ -1,0 +1,3 @@
+numpy
+scipy
+# torch is needed only when running the official judge script (`judger.py`) in this challenge.
